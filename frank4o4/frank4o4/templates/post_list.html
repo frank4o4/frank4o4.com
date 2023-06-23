@@ -1,0 +1,12 @@
+{% load markdown_extras %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+{% for post in object_list %}
+<div>
+  <h2>{{ post.title }}</h2>
+  <p class="markdown-content">{{ post.body | markdown | safe }}</p>
+
+</div>
+<hr>
+{% endfor %}
